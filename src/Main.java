@@ -4,9 +4,7 @@ public class Main {
 
     public static void checkLeapYear(int year) {
 
-        if (year < 1584) {
-            System.out.println("Проверка не требуется");
-        } else if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " год — високосный год");
         } else if (year % 100 == 0 && year % 400 != 0) {
             System.out.println(year + " год не является високосным");
@@ -18,17 +16,14 @@ public class Main {
     public static void checkPhoneOsVersion(int osDeveloper, int year) {
         int currentYear = LocalDate.now().getYear();
 
-        if (osDeveloper >= 0 && osDeveloper <= 1) {
-
-            if (osDeveloper == 1 && year < currentYear) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else if (osDeveloper == 1 && year >= currentYear) {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            } else if (osDeveloper == 0 && year < currentYear) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else if (osDeveloper == 0 && year >= currentYear) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            }
+        if (osDeveloper == 1 && year < currentYear) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (osDeveloper == 1 && year >= currentYear) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (osDeveloper == 0 && year < currentYear) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (osDeveloper == 0 && year >= currentYear) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
         } else {
             System.out.println("Вы ввели неверный вариант Операционной системы. Попробуйте ещё раз");
         }
@@ -61,6 +56,8 @@ public class Main {
 
         //Task 3
         System.out.println("Task 3");
-        System.out.println(calculationOfDeliveryDays(101));
+        System.out.println("Потребуется дней: " + calculationOfDeliveryDays(101));
+
+        System.out.println();
     }
 }
